@@ -49,9 +49,9 @@ namespace Lab4_Nasledovanie
             // 
             // GetButton
             // 
-            this.GetButton.Location = new System.Drawing.Point(267, 152);
+            this.GetButton.Location = new System.Drawing.Point(267, 220);
             this.GetButton.Name = "GetButton";
-            this.GetButton.Size = new System.Drawing.Size(157, 207);
+            this.GetButton.Size = new System.Drawing.Size(157, 139);
             this.GetButton.TabIndex = 4;
             this.GetButton.Text = "Взять";
             this.GetButton.UseVisualStyleBackColor = true;
@@ -86,9 +86,9 @@ namespace Lab4_Nasledovanie
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(359, 63);
+            this.richTextBox1.Location = new System.Drawing.Point(267, 63);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(125, 120);
+            this.richTextBox1.Size = new System.Drawing.Size(157, 124);
             this.richTextBox1.TabIndex = 10;
             this.richTextBox1.Text = "";
             // 
