@@ -25,20 +25,35 @@ namespace Lab4_Nasledovanie
         {
             this.ListOfPlants.Clear();
             var rnd = new Random();
+            
             for (var i = 0; i < 10; ++i)
             {
                 switch (rnd.Next() % 3) // генерирую случайное число от 0 до 2 (ну остаток от деления на 3)
                 {
                     case 0: 
-                        this.ListOfPlants.Add(new Tree());
+                        this.ListOfPlants.Add(new Tree {
+                            Hight = rnd.Next(50,500)
+                        });
+                        
                         break;
-                    case 1: 
-                        this.ListOfPlants.Add(new Bush());
+                    case 1:
+                        this.ListOfPlants.Add(new Bush
+                        {
+                            Hight = rnd.Next(20, 50),
+                            vetki = rnd.Next(5, 16),
+                            flovers = rnd.Next(1) == 0
+                        }) ;
                         break;
-                    case 2: 
-                        this.ListOfPlants.Add(new Flover());
-                        break;
-                      
+                    case 2:
+                        string[] names = new string[] {"Голубой","Желтый","Красный", "Белый" };
+                        string[] types = new string[] { "Лиллия", "Одуванчик" };
+                        this.ListOfPlants.Add(new Flover {
+                            Hight = rnd.Next(1, 20),
+                            Lepestki = rnd.Next(3, 8),
+                            Color = names[rnd.Next(3)],
+                            Type = types[rnd.Next(1)]
+                        }); 
+                        break;            
                 }
             }
             ShowInfo();
@@ -79,12 +94,12 @@ namespace Lab4_Nasledovanie
                 pictureBox.Image = Image.FromFile("pusto");
                 return;
             }
-            var drink = this.ListOfPlants[0];
+            var plant = this.ListOfPlants[0];
             this.ListOfPlants.RemoveAt(0);
 
-            txtOut.Text = drink.GetInfo();
+            txtOut.Text = plant.GetInfo();
 
-            pictureBox.Image = drink.GetJPG();
+            pictureBox.Image = Image.FromFile(plant.GetImage());
             ShowInfo();
         }
     }

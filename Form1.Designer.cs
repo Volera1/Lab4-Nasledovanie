@@ -29,6 +29,7 @@ namespace Lab4_Nasledovanie
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.Refull = new System.Windows.Forms.Button();
             this.GetButton = new System.Windows.Forms.Button();
             this.pictureBox = new System.Windows.Forms.PictureBox();
@@ -61,9 +62,11 @@ namespace Lab4_Nasledovanie
             // pictureBox
             // 
             this.pictureBox.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.pictureBox.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox.Image")));
             this.pictureBox.Location = new System.Drawing.Point(33, 152);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(214, 207);
+            this.pictureBox.Size = new System.Drawing.Size(215, 207);
+            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox.TabIndex = 5;
             this.pictureBox.TabStop = false;
             // 
