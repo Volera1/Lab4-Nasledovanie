@@ -31,11 +31,11 @@ namespace Lab4_Nasledovanie
         {
             this.Refull = new System.Windows.Forms.Button();
             this.GetButton = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.CountOf = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.txtOut = new System.Windows.Forms.RichTextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // Refull
@@ -46,6 +46,7 @@ namespace Lab4_Nasledovanie
             this.Refull.TabIndex = 0;
             this.Refull.Text = "Перезаполнить";
             this.Refull.UseVisualStyleBackColor = true;
+            this.Refull.Click += new System.EventHandler(this.Refull_Click);
             // 
             // GetButton
             // 
@@ -55,15 +56,16 @@ namespace Lab4_Nasledovanie
             this.GetButton.TabIndex = 4;
             this.GetButton.Text = "Взять";
             this.GetButton.UseVisualStyleBackColor = true;
+            this.GetButton.Click += new System.EventHandler(this.GetButton_Click);
             // 
-            // pictureBox1
+            // pictureBox
             // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox1.Location = new System.Drawing.Point(33, 152);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(214, 207);
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
+            this.pictureBox.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.pictureBox.Location = new System.Drawing.Point(33, 152);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(214, 207);
+            this.pictureBox.TabIndex = 5;
+            this.pictureBox.TabStop = false;
             // 
             // label1
             // 
@@ -84,28 +86,28 @@ namespace Lab4_Nasledovanie
             this.CountOf.TabIndex = 9;
             this.CountOf.Text = "0\r\n0\r\n0";
             // 
-            // richTextBox1
+            // txtOut
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(267, 63);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(157, 124);
-            this.richTextBox1.TabIndex = 10;
-            this.richTextBox1.Text = "";
+            this.txtOut.Location = new System.Drawing.Point(267, 63);
+            this.txtOut.Name = "txtOut";
+            this.txtOut.Size = new System.Drawing.Size(157, 124);
+            this.txtOut.TabIndex = 10;
+            this.txtOut.Text = "";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(448, 388);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.txtOut);
             this.Controls.Add(this.CountOf);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pictureBox);
             this.Controls.Add(this.GetButton);
             this.Controls.Add(this.Refull);
             this.Name = "Form1";
             this.Text = "Avtomat";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -115,10 +117,10 @@ namespace Lab4_Nasledovanie
 
         private System.Windows.Forms.Button Refull;
         private System.Windows.Forms.Button GetButton;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label CountOf;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox txtOut;
     }
 }
 
