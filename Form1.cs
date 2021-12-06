@@ -16,25 +16,27 @@ namespace Lab4_Nasledovanie
         public Form1()
         {
             InitializeComponent();
+            RefullOption();
             ShowInfo();
         }
 
-        
-
-        private void Refull_Click(object sender, EventArgs e)
+        private void RefullOption()
         {
             this.ListOfPlants.Clear();
             var rnd = new Random();
-            
+
             for (var i = 0; i < 10; ++i)
             {
                 switch (rnd.Next() % 3) // генерирую случайное число от 0 до 2 (ну остаток от деления на 3)
                 {
-                    case 0: 
-                        this.ListOfPlants.Add(new Tree {
-                            Hight = rnd.Next(50,500)
+                    case 0:
+                        this.ListOfPlants.Add(new Tree
+                        {
+                            Hight = rnd.Next(50, 1000),
+                            radius = rnd.Next(10, 300),
+                            hvoa = rnd.Next(1) == 0
                         });
-                        
+
                         break;
                     case 1:
                         this.ListOfPlants.Add(new Bush
@@ -42,20 +44,26 @@ namespace Lab4_Nasledovanie
                             Hight = rnd.Next(20, 50),
                             vetki = rnd.Next(5, 16),
                             flovers = rnd.Next(1) == 0
-                        }) ;
+                        });
                         break;
                     case 2:
-                        string[] names = new string[] {"Голубой","Желтый","Красный", "Белый" };
-                        string[] types = new string[] { "Лиллия", "Одуванчик" };
-                        this.ListOfPlants.Add(new Flover {
+                        string[] names = new string[] { "Голубой", "Желтый", "Красный", "Белый" };
+                        string[] types = new string[] { "Лиллия", "Роза", "Анютины глазки" };
+                        this.ListOfPlants.Add(new Flover
+                        {
                             Hight = rnd.Next(1, 20),
                             Lepestki = rnd.Next(3, 8),
                             Color = names[rnd.Next(3)],
-                            Type = types[rnd.Next(1)]
-                        }); 
-                        break;            
+                            Type = types[rnd.Next(2)]
+                        });
+                        break;
                 }
             }
+        }
+
+        private void Refull_Click(object sender, EventArgs e)
+        {
+            RefullOption();
             ShowInfo();
         }
         private void ShowInfo()
@@ -64,6 +72,8 @@ namespace Lab4_Nasledovanie
             int TreeCount = 0;
             int BushCount = 0;
             int FloverCount = 0;
+            String str= "";
+            int L = 0;
 
             // пройдемся по всему списку
             foreach (var fruit in this.ListOfPlants)
@@ -71,17 +81,21 @@ namespace Lab4_Nasledovanie
                 if (fruit is Tree)
                 {
                     TreeCount += 1;
+                    str += (L+1)+") Дерево\n";
                 }
                 else if (fruit is Bush)
                 {
                     BushCount += 1;
+                    str += (L + 1) + ") Куст\n";
                 }
                 else if (fruit is Flover)
                 {
                     FloverCount += 1;
+                    str += (L + 1) + ") Цветок\n";
                 }
+                L += 1;
             }
-
+            Ochered.Text = str;
             CountOf.Text = String.Format("{0}\n{1}\n{2}", TreeCount, BushCount, FloverCount);
         }
 
@@ -91,15 +105,12 @@ namespace Lab4_Nasledovanie
             if (this.ListOfPlants.Count == 0)
             {
                 txtOut.Text = "Пусто";
-                pictureBox.Image = Image.FromFile("pusto");
                 return;
             }
             var plant = this.ListOfPlants[0];
             this.ListOfPlants.RemoveAt(0);
 
             txtOut.Text = plant.GetInfo();
-
-            pictureBox.Image = Image.FromFile(plant.GetImage());
             ShowInfo();
         }
     }

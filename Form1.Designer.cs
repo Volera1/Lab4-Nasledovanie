@@ -32,18 +32,18 @@ namespace Lab4_Nasledovanie
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.Refull = new System.Windows.Forms.Button();
             this.GetButton = new System.Windows.Forms.Button();
-            this.pictureBox = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.CountOf = new System.Windows.Forms.Label();
             this.txtOut = new System.Windows.Forms.RichTextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
+            this.Ochered = new System.Windows.Forms.RichTextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // Refull
             // 
-            this.Refull.Location = new System.Drawing.Point(33, 12);
+            this.Refull.Location = new System.Drawing.Point(12, 12);
             this.Refull.Name = "Refull";
-            this.Refull.Size = new System.Drawing.Size(413, 29);
+            this.Refull.Size = new System.Drawing.Size(412, 29);
             this.Refull.TabIndex = 0;
             this.Refull.Text = "Перезаполнить";
             this.Refull.UseVisualStyleBackColor = true;
@@ -51,24 +51,13 @@ namespace Lab4_Nasledovanie
             // 
             // GetButton
             // 
-            this.GetButton.Location = new System.Drawing.Point(267, 220);
+            this.GetButton.Location = new System.Drawing.Point(232, 187);
             this.GetButton.Name = "GetButton";
-            this.GetButton.Size = new System.Drawing.Size(157, 139);
+            this.GetButton.Size = new System.Drawing.Size(192, 159);
             this.GetButton.TabIndex = 4;
             this.GetButton.Text = "Взять";
             this.GetButton.UseVisualStyleBackColor = true;
             this.GetButton.Click += new System.EventHandler(this.GetButton_Click);
-            // 
-            // pictureBox
-            // 
-            this.pictureBox.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox.Image")));
-            this.pictureBox.Location = new System.Drawing.Point(33, 152);
-            this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(215, 207);
-            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox.TabIndex = 5;
-            this.pictureBox.TabStop = false;
             // 
             // label1
             // 
@@ -91,26 +80,44 @@ namespace Lab4_Nasledovanie
             // 
             // txtOut
             // 
-            this.txtOut.Location = new System.Drawing.Point(267, 63);
+            this.txtOut.Location = new System.Drawing.Point(232, 63);
             this.txtOut.Name = "txtOut";
-            this.txtOut.Size = new System.Drawing.Size(157, 124);
+            this.txtOut.Size = new System.Drawing.Size(192, 107);
             this.txtOut.TabIndex = 10;
             this.txtOut.Text = "";
+            // 
+            // Ochered
+            // 
+            this.Ochered.Location = new System.Drawing.Point(24, 176);
+            this.Ochered.Name = "Ochered";
+            this.Ochered.Size = new System.Drawing.Size(181, 170);
+            this.Ochered.TabIndex = 11;
+            this.Ochered.Text = "";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(33, 150);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(125, 20);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Список очереди:";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(448, 388);
+            this.ClientSize = new System.Drawing.Size(448, 368);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.Ochered);
             this.Controls.Add(this.txtOut);
             this.Controls.Add(this.CountOf);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox);
             this.Controls.Add(this.GetButton);
             this.Controls.Add(this.Refull);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Avtomat";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -120,10 +127,11 @@ namespace Lab4_Nasledovanie
 
         private System.Windows.Forms.Button Refull;
         private System.Windows.Forms.Button GetButton;
-        private System.Windows.Forms.PictureBox pictureBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label CountOf;
         private System.Windows.Forms.RichTextBox txtOut;
+        private System.Windows.Forms.RichTextBox Ochered;
+        private System.Windows.Forms.Label label2;
     }
 }
 

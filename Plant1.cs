@@ -15,10 +15,7 @@ namespace Lab4_Nasledovanie
             String str = "Растение";
             return str;
         }
-        public virtual String GetImage()
-        {
-            return "pusto";
-        }
+        
     }
     public class Flover : Plant
     {
@@ -33,27 +30,7 @@ namespace Lab4_Nasledovanie
                 "Тип: "+Type;
             return str;
         }
-        public override String GetImage()
-        {
-            String Image;
-            switch (Type)
-            {
-                case "Одуванчик":
-                    { Image = "Oduvanchik"; }
-                    break;
-                case "Лиллия":
-                    {
-                        Image = "Lilia";
-                    }
-                    break;
-                default:
-                    {
-                        Image = "pusto";
-                        break;
-                    }
-            }
-            return Image;
-        }
+        
     }
 
     public class Bush : Plant
@@ -67,51 +44,21 @@ namespace Lab4_Nasledovanie
                     "Наличие цветов: " + flovers;
             return str;
         }
-        public override String GetImage()
-        {
-            String Image;
-            if (flovers) {
-                Image = "FloverBush";
-            }
-            else
-            {
-                Image = "Bush";
-            }
-            return Image;
-        }
+        
     }
     public class Tree : Plant
     {
-        public String type = "";
+        public bool hvoa = false;
         public int radius = 0;
         public override String GetInfo()
-        {
-            String str = "Дерево\n" +
+        {            String str = "Дерево\n" +
                 "Радиус: " + radius + "\n" +
-                "Тип: " + type;
+                "Тип: ";
+            if (hvoa) { str +="Хвойное"; }
+            else { str += "Листовое"; }
             return str;
         }
-        public override String GetImage()
-        {
-            String Image;
-            switch (type)
-            {
-                case "Хвойное":
-                    { Image = "Hvoia"; }
-                    break;
-                case "Листовое":
-                    {
-                        Image = "List";
-                    }
-                    break;
-                default:
-                    {
-                        Image = "pusto";
-                        break;
-                    }
-            }
-            return Image;
-        }
+       
     }
 
 }
