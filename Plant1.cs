@@ -25,7 +25,8 @@ namespace Lab4_Nasledovanie
         public override String GetInfo()
         {
             String str = "Цветок\n" +
-                "Количество лепестков: "+Lepestki+"\n" +
+                "Высота: " + Hight + " м.\n" +
+                "Количество лепестков: " +Lepestki+"\n" +
                 "Цвет: "+Color+"\n" +
                 "Тип: "+Type;
             return str;
@@ -40,6 +41,7 @@ namespace Lab4_Nasledovanie
         public override String GetInfo()
         {
             String str = "Куст\n" +
+                "Высота: " + Hight +" м.\n"+
                     "Количество веток: " + vetki + "\n" +
                     "Наличие цветов: " + flovers;
             return str;
@@ -52,7 +54,8 @@ namespace Lab4_Nasledovanie
         public int radius = 0;
         public override String GetInfo()
         {            String str = "Дерево\n" +
-                "Радиус: " + radius + "\n" +
+                "Высота: " + Hight + " м.\n" +
+                "Радиус: " + radius + " м.\n" +
                 "Тип: ";
             if (hvoa) { str +="Хвойное"; }
             else { str += "Листовое"; }
