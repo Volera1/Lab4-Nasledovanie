@@ -43,7 +43,7 @@ namespace Lab4_Nasledovanie
                         {
                             Hight = rnd.Next(20, 50),
                             vetki = rnd.Next(5, 16),
-                            flovers = rnd.Next(1) == 0
+                            flovers = rnd.Next(2) == 0
                         });
                         break;
                     case 2:
@@ -53,8 +53,8 @@ namespace Lab4_Nasledovanie
                         {
                             Hight = rnd.Next(1, 20),
                             Lepestki = rnd.Next(3, 8),
-                            Color = names[rnd.Next(3)],
-                            Type = types[rnd.Next(2)]
+                            Color = names[rnd.Next(4)],
+                            Type = types[rnd.Next(3)]
                         });
                         break;
                 }

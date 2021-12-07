@@ -8,7 +8,6 @@ namespace Lab4_Nasledovanie
 {
     public class Plant
     {
-        public static Random rnd = new Random();
         public int Hight=0;
         public virtual String GetInfo()
         {
